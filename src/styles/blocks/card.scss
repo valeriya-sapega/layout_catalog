@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: space-between;
   width: $card-width;
-  padding-block: 32px 16px;
-  padding-inline: 16px;
+  padding-block: $spacing-xxl $spacing-md;
+  padding-inline: $spacing-md;
 
   border: $border-width solid $card-border-color;
   border-radius: $border-radius;
@@ -18,12 +18,12 @@
 
   &__image {
     align-self: center;
-    width: 160px;
-    height: 134px;
+    width: $image-width;
+    height: $image-height;
   }
 
   &__title {
-    margin-top: 40px;
+    margin-top: $spacing-xxxl;
     font-size: $font-size-medium;
     font-weight: $font-weight-medium;
     line-height: $line-height-large;
@@ -31,7 +31,7 @@
   }
 
   &__code {
-    margin-top: 4px;
+    margin-top: $spacing-xs;
     font-size: $font-size-base;
     font-weight: $font-weight-base;
     line-height: $line-height-base;
@@ -40,7 +40,7 @@
 
   &__reviews {
     display: flex;
-    margin-top: 16px;
+    margin-top: $spacing-md;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -50,37 +50,16 @@
     color: $primary-text-color;
   }
 
-  &__price-container {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-  }
-
-  &__price-label {
-    font-size: $font-size-medium;
-    line-height: $line-height-large;
-    color: $secondary-text-color;
-  }
-
-  &__price-value {
-    font-size: $font-size-large;
-    line-height: $line-height-large;
-    font-weight: $font-weight-bold;
-    color: $primary-text-color;
-  }
-
   &__button {
-    margin-top: 16px;
-    padding: 11px 0;
+    margin-top: $spacing-md;
+    padding: $button-padding-vertical 0;
     display: flex;
     justify-content: center;
     background-color: $accent-color;
     border: $border-width solid $accent-color;
     border-radius: $border-radius;
     font-family: $font-family-base;
-    font-size: 14px;
+    font-size: $font-size-medium;
     line-height: $line-height-medium;
     font-weight: $font-weight-bold;
     text-decoration: none;
@@ -96,15 +75,37 @@
   }
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale($hover-scale);
 
     & .card__title {
       color: $card-title-color-hover;
+      transition: all $transition-duration ease-in-out;
     }
 
     & .card__button {
       background-color: $white;
       color: $accent-color;
+      transition: all $transition-duration ease-in-out;
     }
   }
 }
+
+  .price {
+    margin-top: $spacing-xl;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__label {
+      font-size: $font-size-medium;
+      line-height: $line-height-large;
+      color: $secondary-text-color;
+    }
+
+    &__value {
+      font-size: $font-size-large;
+      line-height: $line-height-large;
+      font-weight: $font-weight-bold;
+      color: $primary-text-color;
+    }
+  }

@@ -1,8 +1,8 @@
 .catalog {
-  padding: 50px 40px;
+  padding: $spacing-mega $spacing-xxxl;
   display: grid;
   grid-template-columns: repeat(1, $card-width);
-  gap: 48px 46px;
+  gap: $grid-gap-row $grid-gap-column;
   justify-content: center;
 
   @include responsive-grid(2, 488px, $card-width);
